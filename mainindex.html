@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col head-col">
+                <h1 class="header">Cryponyte</h1>
+                <img class="headimg" src="assests/bitcoin-currency-symbol-with-dollar-yens-and-pounds-signs.svg"
+                    style="height: 120px;" alt="">
+            </div>
+        </div>
+        <div id="mainpage">
+            <div class="row navbar navbar-expand mainrow">
+                <div class="container-sm">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <a onclick="coins ()" class="nav-link">Home</a>
+                        <a onclick="liveReports (favorites)" class="nav-link">Live reports</a>
+                        <a onclick="about ()" class="nav-link">About</a>
+                    </ul>
+                    <div id="searchForm">
+                        <form class="d-flex">
+                            <input class="form-control me-2" id="search-input" type="search" id="form1"
+                                placeholder="Search">
+                            <label class="form-label" for="form1"></label>
+                            <button class="btn btn-outline-dark" id="search-button" type="button">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="spinner-border spinMain" role="status" id="mainSpinner" style="display: none;">
+                <span class="visually-hidden"></span>
+            </div>
+            <div class="notFound" id="serachNotFound" style="display: none;"></div>
+            <div class="row bodyrow row-cols-auto justify-content-center" id="curencyCards"></div>
+            <div class="modal" id="favorits-modal" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Favorits</h5>
+                            <button type="button" class="btn-close" onclick="closeModal()" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="favorits-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        </div>
+    </div>
+
+    <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="script2.js"></script>
+</body>
+
+</html>
